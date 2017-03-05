@@ -14,6 +14,7 @@
 		E019B1881E6CBB670094BE2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E019B1871E6CBB670094BE2C /* Assets.xcassets */; };
 		E019B18B1E6CBB670094BE2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E019B1891E6CBB670094BE2C /* LaunchScreen.storyboard */; };
 		E019B1961E6CBB670094BE2C /* Meme_GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1951E6CBB670094BE2C /* Meme_GeneratorTests.swift */; };
+		E019B1A11E6CBB850094BE2C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A01E6CBB850094BE2C /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E019B1911E6CBB670094BE2C /* Meme GeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme GeneratorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E019B1951E6CBB670094BE2C /* Meme_GeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme_GeneratorTests.swift; sourceTree = "<group>"; };
 		E019B1971E6CBB670094BE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E019B1A01E6CBB850094BE2C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		E019B1711E6CBB660094BE2C = {
 			isa = PBXGroup;
 			children = (
+				E019B1A01E6CBB850094BE2C /* README.md */,
 				E019B17C1E6CBB670094BE2C /* Meme Generator */,
 				E019B1941E6CBB670094BE2C /* Meme GeneratorTests */,
 				E019B17B1E6CBB660094BE2C /* Products */,
@@ -206,6 +209,7 @@
 			files = (
 				E019B1861E6CBB670094BE2C /* Meme_Generator.xcdatamodeld in Sources */,
 				E019B1801E6CBB670094BE2C /* ViewController.swift in Sources */,
+				E019B1A11E6CBB850094BE2C /* README.md in Sources */,
 				E019B17E1E6CBB670094BE2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
