@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		E019B17E1E6CBB670094BE2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B17D1E6CBB670094BE2C /* AppDelegate.swift */; };
-		E019B1801E6CBB670094BE2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B17F1E6CBB670094BE2C /* ViewController.swift */; };
+		E019B1801E6CBB670094BE2C /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B17F1E6CBB670094BE2C /* LibraryTableViewController.swift */; };
 		E019B1831E6CBB670094BE2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E019B1811E6CBB670094BE2C /* Main.storyboard */; };
 		E019B1861E6CBB670094BE2C /* Meme_Generator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E019B1841E6CBB670094BE2C /* Meme_Generator.xcdatamodeld */; };
 		E019B1881E6CBB670094BE2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E019B1871E6CBB670094BE2C /* Assets.xcassets */; };
 		E019B18B1E6CBB670094BE2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E019B1891E6CBB670094BE2C /* LaunchScreen.storyboard */; };
 		E019B1961E6CBB670094BE2C /* Meme_GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1951E6CBB670094BE2C /* Meme_GeneratorTests.swift */; };
 		E019B1A11E6CBB850094BE2C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A01E6CBB850094BE2C /* README.md */; };
+		E019B1A31E6CC88F0094BE2C /* Memes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A21E6CC88F0094BE2C /* Memes.swift */; };
+		E019B1A51E6CCB720094BE2C /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A41E6CCB720094BE2C /* GenerateViewController.swift */; };
+		E019B1A71E6CCC3B0094BE2C /* LibraryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */; };
+		E019B1A91E6CD1360094BE2C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A81E6CD1360094BE2C /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +34,7 @@
 /* Begin PBXFileReference section */
 		E019B17A1E6CBB660094BE2C /* Meme Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E019B17D1E6CBB670094BE2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E019B17F1E6CBB670094BE2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E019B17F1E6CBB670094BE2C /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		E019B1821E6CBB670094BE2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E019B1851E6CBB670094BE2C /* Meme_Generator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meme_Generator.xcdatamodel; sourceTree = "<group>"; };
 		E019B1871E6CBB670094BE2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		E019B1951E6CBB670094BE2C /* Meme_GeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme_GeneratorTests.swift; sourceTree = "<group>"; };
 		E019B1971E6CBB670094BE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E019B1A01E6CBB850094BE2C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E019B1A21E6CC88F0094BE2C /* Memes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memes.swift; sourceTree = "<group>"; };
+		E019B1A41E6CCB720094BE2C /* GenerateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
+		E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryGridViewController.swift; sourceTree = "<group>"; };
+		E019B1A81E6CD1360094BE2C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +91,16 @@
 			isa = PBXGroup;
 			children = (
 				E019B17D1E6CBB670094BE2C /* AppDelegate.swift */,
-				E019B17F1E6CBB670094BE2C /* ViewController.swift */,
+				E019B17F1E6CBB670094BE2C /* LibraryTableViewController.swift */,
+				E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */,
+				E019B1A41E6CCB720094BE2C /* GenerateViewController.swift */,
 				E019B1811E6CBB670094BE2C /* Main.storyboard */,
 				E019B1871E6CBB670094BE2C /* Assets.xcassets */,
 				E019B1891E6CBB670094BE2C /* LaunchScreen.storyboard */,
 				E019B18C1E6CBB670094BE2C /* Info.plist */,
 				E019B1841E6CBB670094BE2C /* Meme_Generator.xcdatamodeld */,
+				E019B1A21E6CC88F0094BE2C /* Memes.swift */,
+				E019B1A81E6CD1360094BE2C /* Config.swift */,
 			);
 			path = "Meme Generator";
 			sourceTree = "<group>";
@@ -208,7 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E019B1861E6CBB670094BE2C /* Meme_Generator.xcdatamodeld in Sources */,
-				E019B1801E6CBB670094BE2C /* ViewController.swift in Sources */,
+				E019B1A51E6CCB720094BE2C /* GenerateViewController.swift in Sources */,
+				E019B1801E6CBB670094BE2C /* LibraryTableViewController.swift in Sources */,
+				E019B1A31E6CC88F0094BE2C /* Memes.swift in Sources */,
+				E019B1A71E6CCC3B0094BE2C /* LibraryGridViewController.swift in Sources */,
+				E019B1A91E6CD1360094BE2C /* Config.swift in Sources */,
 				E019B1A11E6CBB850094BE2C /* README.md in Sources */,
 				E019B17E1E6CBB670094BE2C /* AppDelegate.swift in Sources */,
 			);

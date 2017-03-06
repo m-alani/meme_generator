@@ -1,26 +1,128 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JqL-PV-o4r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Grid-->
+        <scene sceneID="uDH-J5-bOr">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NRc-Pa-c1N" customClass="LibraryGridViewController" customModule="Meme_Generator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="4Aq-FK-hnj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vkk-EO-fFQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="skc-DL-QHY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbh-qo-4NY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="iai-x1-gwY"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="View Memes" id="A4I-Hk-UHq">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="atB-q7-Uyr"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dbh-qo-4NY" firstAttribute="leading" secondItem="skc-DL-QHY" secondAttribute="leading" id="MBS-wk-s6B"/>
+                            <constraint firstAttribute="trailing" secondItem="Dbh-qo-4NY" secondAttribute="trailing" id="lDv-jT-zrp"/>
+                            <constraint firstItem="Dbh-qo-4NY" firstAttribute="top" secondItem="skc-DL-QHY" secondAttribute="top" id="vub-be-tKy"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Grid" image="GridIcon" id="W3V-QD-EeQ"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FA9-Cl-WMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1121" y="-318"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="alH-KR-ZR5">
+            <objects>
+                <viewController id="lMW-Gv-JPz" customClass="LibraryTableViewController" customModule="Meme_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gsc-fd-7Co"/>
+                        <viewControllerLayoutGuide type="bottom" id="5PW-SS-d1M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5MN-9f-afK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-JH-Qwy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="hI5-33-tqj"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="View Memes" id="62t-y3-QsA">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3HI-qn-UxU"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gwf-JH-Qwy" secondAttribute="trailing" id="TQI-w4-a24"/>
+                            <constraint firstItem="Gwf-JH-Qwy" firstAttribute="leading" secondItem="5MN-9f-afK" secondAttribute="leading" id="d0W-UP-2G3"/>
+                            <constraint firstItem="Gwf-JH-Qwy" firstAttribute="top" secondItem="5MN-9f-afK" secondAttribute="top" id="mz4-Yj-Fj2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="List" image="ListIcon" id="CF4-Hm-ewh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CkG-J1-fJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="-973"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uUM-ST-o7F">
+            <objects>
+                <tabBarController id="JqL-PV-o4r" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kY9-8b-7rX"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="SZb-Qa-OwB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lMW-Gv-JPz" kind="relationship" relationship="viewControllers" id="KUF-3R-wPI"/>
+                        <segue destination="NRc-Pa-c1N" kind="relationship" relationship="viewControllers" id="Hfy-9w-DSW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kan-Yp-fgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="-647"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GridIcon" width="30" height="30"/>
+        <image name="ListIcon" width="30" height="30"/>
+    </resources>
 </document>
