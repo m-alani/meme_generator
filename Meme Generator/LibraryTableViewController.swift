@@ -10,6 +10,8 @@ import UIKit
 
 class LibraryTableViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.title = "View Memes"
