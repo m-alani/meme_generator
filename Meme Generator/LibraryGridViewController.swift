@@ -8,11 +8,13 @@
 
 import UIKit
 
-class LibraryGridViewController: UIViewController {
+class LibraryGridViewController: UICollectionViewController{
 
+    @IBOutlet weak var myCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.title = "View Memes"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,5 +32,21 @@ class LibraryGridViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+// MARK: - UICollectionViewDataSource Methods
+extension LibraryGridViewController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return memesList.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GridCustomCell
+        cell.memeImage.image = memesList[indexPath.row].memeImg
+        return cell
+    }
 }
