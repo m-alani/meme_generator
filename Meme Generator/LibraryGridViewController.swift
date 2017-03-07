@@ -8,9 +8,12 @@
 
 import UIKit
 
-class LibraryGridViewController: UICollectionViewController{
+class LibraryGridViewController: UIViewController{
 
     @IBOutlet weak var myCollectionView: UICollectionView!
+    
+    fileprivate let sectionInsets = UIEdgeInsets(top: 30.0, left: 15.0, bottom: 30.0, right: 15.0)
+    fileprivate let itemsPerRow: CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +38,34 @@ class LibraryGridViewController: UICollectionViewController{
 }
 
 // MARK: - UICollectionViewDataSource Methods
-extension LibraryGridViewController {
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension LibraryGridViewController : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memesList.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GridCustomCell
         cell.memeImage.image = memesList[indexPath.row].memeImg
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout Methods
+extension LibraryGridViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
     }
 }

@@ -14,9 +14,6 @@ class LibraryTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.title = "View Memes"
-        //self.navigationController?.navigationBar.backgroundColor = TITLE_BACKGROUND_COLOR
-        //self.navigationController?.navigationBar.tintColor = TITLE_FONT_COLOR
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,3 +22,24 @@ class LibraryTableViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate Methods
+extension LibraryTableViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: - handle selecting a row (meme) for editing
+    }
+}
+
+// MARK: - UITableViewDataSource Methods
+extension LibraryTableViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return memesList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        cell.textLabel?.text = memesList[indexPath.row].topText
+        cell.detailTextLabel?.text = memesList[indexPath.row].bottomText
+        cell.imageView?.image = memesList[indexPath.row].originalImg
+        return cell
+    }
+}
