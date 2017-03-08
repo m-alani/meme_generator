@@ -125,6 +125,18 @@
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbl-Oc-mfM">
+                                <rect key="frame" x="16" y="474" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="cst-mv-YDe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="N5q-yh-W8G" id="BuQ-iv-iPw"/>
+                                </connections>
+                            </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h02-Ek-AIU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <color key="backgroundColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -161,7 +173,7 @@
                                 <items>
                                     <barButtonItem systemItem="add" id="BQs-Il-rWS">
                                         <connections>
-                                            <action selector="actionButtonPressed:" destination="N5q-yh-W8G" id="dwu-oL-A0L"/>
+                                            <action selector="addButtonPressed:" destination="N5q-yh-W8G" id="GM8-va-Cxh"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="K5D-rw-Q9U"/>
@@ -174,29 +186,49 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C7l-qk-fWh">
+                                <rect key="frame" x="16" y="56" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="RcF-o0-m1D"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="N5q-yh-W8G" id="6Fy-b2-iQA"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="C7l-qk-fWh" firstAttribute="top" secondItem="h02-Ek-AIU" secondAttribute="bottom" id="25H-KR-nCB"/>
                             <constraint firstAttribute="trailing" secondItem="0zc-pQ-jtH" secondAttribute="trailing" id="577-ic-3JR"/>
                             <constraint firstItem="g7b-iX-3jI" firstAttribute="top" secondItem="LVL-Sz-waf" secondAttribute="top" id="9Ap-dm-QIA"/>
                             <constraint firstAttribute="trailing" secondItem="h02-Ek-AIU" secondAttribute="trailing" id="O7X-KJ-NLw"/>
+                            <constraint firstItem="cbl-Oc-mfM" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leadingMargin" id="OJY-7w-XhX"/>
+                            <constraint firstItem="cbl-Oc-mfM" firstAttribute="trailing" secondItem="LVL-Sz-waf" secondAttribute="trailingMargin" id="QuH-t7-3Jy"/>
+                            <constraint firstItem="C7l-qk-fWh" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leadingMargin" id="UMs-vY-fMv"/>
                             <constraint firstItem="pGu-JI-mRT" firstAttribute="top" secondItem="g7b-iX-3jI" secondAttribute="bottom" id="clu-sB-01e"/>
                             <constraint firstItem="h02-Ek-AIU" firstAttribute="top" secondItem="LVL-Sz-waf" secondAttribute="top" id="cz7-in-vO3"/>
+                            <constraint firstItem="0zc-pQ-jtH" firstAttribute="top" secondItem="cbl-Oc-mfM" secondAttribute="bottom" id="eef-0r-pbh"/>
                             <constraint firstItem="h02-Ek-AIU" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leading" id="nHm-U6-mCk"/>
                             <constraint firstItem="0zc-pQ-jtH" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leading" id="oYc-s2-4kP"/>
                             <constraint firstItem="g7b-iX-3jI" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leading" id="pm4-5a-eK6"/>
                             <constraint firstItem="pGu-JI-mRT" firstAttribute="top" secondItem="0zc-pQ-jtH" secondAttribute="bottom" id="qYd-fI-Uws"/>
                             <constraint firstAttribute="trailing" secondItem="g7b-iX-3jI" secondAttribute="trailing" id="unn-l5-tlV"/>
+                            <constraint firstItem="C7l-qk-fWh" firstAttribute="trailing" secondItem="LVL-Sz-waf" secondAttribute="trailingMargin" id="wiA-yV-fjs"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="actionButton" destination="nRj-v0-Sda" id="Sde-2q-wZs"/>
                         <outlet property="addButton" destination="BQs-Il-rWS" id="0eR-f7-kph"/>
+                        <outlet property="bottomText" destination="cbl-Oc-mfM" id="CGy-Pa-JNR"/>
                         <outlet property="cameraButton" destination="oBj-El-Jbp" id="jbn-UP-Soh"/>
                         <outlet property="imageView" destination="g7b-iX-3jI" id="mwJ-8S-zBj"/>
                         <outlet property="saveButton" destination="nmJ-dU-du6" id="HJk-dg-MB4"/>
+                        <outlet property="topText" destination="C7l-qk-fWh" id="g8u-yd-CKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSv-kP-j8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
