@@ -38,7 +38,7 @@
                                     <navigationItem title="Meme Generator" id="pdf-ab-kx1"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Small_logo" translatesAutoresizingMaskIntoConstraints="NO" id="BmI-cC-Iip">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="BmI-cC-Iip">
                                 <rect key="frame" x="62" y="208" width="250" height="250"/>
                                 <color key="tintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -63,6 +63,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Small_logo" width="180" height="180"/>
+        <image name="Launch_logo" width="180" height="180"/>
     </resources>
 </document>
