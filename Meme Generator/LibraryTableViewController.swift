@@ -18,6 +18,9 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         memesViews.table = self.tableView
+        if self.startupAnimation {
+            self.tableView.alpha = 0
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +39,8 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidAppear(_ animated: Bool) {
         if startupAnimation {
             startupAnimation = false
-            self.view.center.y += 750
-            UIView.animate(withDuration: 0.25, animations: {
-                self.view.center.y -= 750
+            UIView.animate(withDuration: 0.5, animations: {
+                self.tableView.alpha = 1
             })
         }
     }
