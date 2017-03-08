@@ -12,3 +12,4 @@ import UIKit
 let TABLE_CELL_IMAGE_WIDTH: CGFloat = 100
 let COLLECTION_INSETS = UIEdgeInsets(top: 15.0, left: 10.0, bottom: 15.0, right: 10.0)
 let COLLECTION_CELLS_PER_ROW: CGFloat = 2
+var ANIMATE_STARTUP = true

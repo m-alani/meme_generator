@@ -14,9 +14,18 @@ class LibraryGridViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
+    override func viewDidLayoutSubviews() {
+//        self.view.center.x += 500
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        UIView.animate(withDuration: 0.25, animations: {
+//            self.view.center.x -= 500
+//        })
+//        print("shifted back")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

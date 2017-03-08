@@ -37,7 +37,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="View Memes" id="A4I-Hk-UHq">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="atB-q7-Uyr"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="atB-q7-Uyr">
+                                            <connections>
+                                                <segue destination="N5q-yh-W8G" kind="show" id="biU-OX-9Iy"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -61,7 +65,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Black_hole_meme" translatesAutoresizingMaskIntoConstraints="NO" id="jBT-Yb-tpd">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.94958466291427612" blue="0.32375055551528931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.84044450790000003" green="1" blue="0.88571969559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -102,6 +106,103 @@
             </objects>
             <point key="canvasLocation" x="1120.8" y="-318.89055472263868"/>
         </scene>
+        <!--Create Meme-->
+        <scene sceneID="b4J-ZH-6El">
+            <objects>
+                <viewController title="Create Meme" hidesBottomBarWhenPushed="YES" id="N5q-yh-W8G" customClass="CreateViewController" customModule="Meme_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e0R-fn-P9V"/>
+                        <viewControllerLayoutGuide type="bottom" id="pGu-JI-mRT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LVL-Sz-waf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g7b-iX-3jI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" red="0.84044450786948099" green="1" blue="0.88571969555004559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h02-Ek-AIU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="2QH-yR-KG2"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Meme Workbench" id="eE5-oS-HMd">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aiF-OR-04V">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="N5q-yh-W8G" id="kV4-7s-jHM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nmJ-dU-du6">
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="N5q-yh-W8G" id="52h-tj-YiP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zc-pQ-jtH">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UOw-Lf-SZK"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="add" id="BQs-Il-rWS">
+                                        <connections>
+                                            <action selector="actionButtonPressed:" destination="N5q-yh-W8G" id="dwu-oL-A0L"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="K5D-rw-Q9U"/>
+                                    <barButtonItem systemItem="action" id="nRj-v0-Sda"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hu6-uP-W2y"/>
+                                    <barButtonItem systemItem="camera" id="oBj-El-Jbp">
+                                        <connections>
+                                            <action selector="cameraButtonPressed:" destination="N5q-yh-W8G" id="ESe-oJ-oMj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0zc-pQ-jtH" secondAttribute="trailing" id="577-ic-3JR"/>
+                            <constraint firstItem="g7b-iX-3jI" firstAttribute="top" secondItem="LVL-Sz-waf" secondAttribute="top" id="9Ap-dm-QIA"/>
+                            <constraint firstAttribute="trailing" secondItem="h02-Ek-AIU" secondAttribute="trailing" id="O7X-KJ-NLw"/>
+                            <constraint firstItem="pGu-JI-mRT" firstAttribute="top" secondItem="g7b-iX-3jI" secondAttribute="bottom" id="clu-sB-01e"/>
+                            <constraint firstItem="h02-Ek-AIU" firstAttribute="top" secondItem="LVL-Sz-waf" secondAttribute="top" id="cz7-in-vO3"/>
+                            <constraint firstItem="h02-Ek-AIU" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leading" id="nHm-U6-mCk"/>
+                            <constraint firstItem="0zc-pQ-jtH" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leading" id="oYc-s2-4kP"/>
+                            <constraint firstItem="g7b-iX-3jI" firstAttribute="leading" secondItem="LVL-Sz-waf" secondAttribute="leading" id="pm4-5a-eK6"/>
+                            <constraint firstItem="pGu-JI-mRT" firstAttribute="top" secondItem="0zc-pQ-jtH" secondAttribute="bottom" id="qYd-fI-Uws"/>
+                            <constraint firstAttribute="trailing" secondItem="g7b-iX-3jI" secondAttribute="trailing" id="unn-l5-tlV"/>
+                        </constraints>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="actionButton" destination="nRj-v0-Sda" id="Sde-2q-wZs"/>
+                        <outlet property="addButton" destination="BQs-Il-rWS" id="0eR-f7-kph"/>
+                        <outlet property="cameraButton" destination="oBj-El-Jbp" id="jbn-UP-Soh"/>
+                        <outlet property="imageView" destination="g7b-iX-3jI" id="mwJ-8S-zBj"/>
+                        <outlet property="saveButton" destination="nmJ-dU-du6" id="HJk-dg-MB4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSv-kP-j8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2125.5999999999999" y="-647.22638680659679"/>
+        </scene>
         <!--List-->
         <scene sceneID="alH-KR-ZR5">
             <objects>
@@ -129,7 +230,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="View Memes" id="62t-y3-QsA">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3HI-qn-UxU"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3HI-qn-UxU">
+                                            <connections>
+                                                <segue destination="N5q-yh-W8G" kind="show" id="Bu6-58-zdo"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -143,12 +248,12 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yyd-yj-Gpa" id="KBK-xH-wPX">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Black_hole" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-tF-Maw">
                                                     <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
-                                                    <color key="backgroundColor" red="0.00097750688850000008" green="0.94779557169999995" blue="0.32448017220000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.84044450790000003" green="1" blue="0.88571969559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="99" id="fLY-LW-1Lf"/>
                                                         <constraint firstAttribute="width" constant="99" id="xLm-mZ-yDY"/>
@@ -245,4 +350,7 @@
         <image name="GridIcon" width="30" height="30"/>
         <image name="ListIcon" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bu6-58-zdo"/>
+    </inferredMetricsTieBreakers>
 </document>

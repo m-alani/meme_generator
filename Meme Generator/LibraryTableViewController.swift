@@ -12,6 +12,8 @@ class LibraryTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var startupAnimation = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,6 +21,16 @@ class LibraryTableViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if startupAnimation {
+            startupAnimation = false
+            self.view.center.y += 750
+            UIView.animate(withDuration: 0.25, animations: {
+                self.view.center.y -= 750
+            })
+        }
     }
 }
 

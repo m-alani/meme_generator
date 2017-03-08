@@ -16,7 +16,7 @@
 		E019B1961E6CBB670094BE2C /* Meme_GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1951E6CBB670094BE2C /* Meme_GeneratorTests.swift */; };
 		E019B1A11E6CBB850094BE2C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A01E6CBB850094BE2C /* README.md */; };
 		E019B1A31E6CC88F0094BE2C /* Memes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A21E6CC88F0094BE2C /* Memes.swift */; };
-		E019B1A51E6CCB720094BE2C /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A41E6CCB720094BE2C /* GenerateViewController.swift */; };
+		E019B1A51E6CCB720094BE2C /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A41E6CCB720094BE2C /* CreateViewController.swift */; };
 		E019B1A71E6CCC3B0094BE2C /* LibraryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */; };
 		E019B1A91E6CD1360094BE2C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A81E6CD1360094BE2C /* Config.swift */; };
 		E0211C451E6F5BC000789DF1 /* GridCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0211C441E6F5BC000789DF1 /* GridCustomCell.swift */; };
@@ -47,7 +47,7 @@
 		E019B1971E6CBB670094BE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E019B1A01E6CBB850094BE2C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E019B1A21E6CC88F0094BE2C /* Memes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memes.swift; sourceTree = "<group>"; };
-		E019B1A41E6CCB720094BE2C /* GenerateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
+		E019B1A41E6CCB720094BE2C /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryGridViewController.swift; sourceTree = "<group>"; };
 		E019B1A81E6CD1360094BE2C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		E0211C441E6F5BC000789DF1 /* GridCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCustomCell.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				E0211C461E6F818500789DF1 /* TableCustomCell.swift */,
 				E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */,
 				E0211C441E6F5BC000789DF1 /* GridCustomCell.swift */,
-				E019B1A41E6CCB720094BE2C /* GenerateViewController.swift */,
+				E019B1A41E6CCB720094BE2C /* CreateViewController.swift */,
 				E019B1811E6CBB670094BE2C /* Main.storyboard */,
 				E019B1871E6CBB670094BE2C /* Assets.xcassets */,
 				E019B1891E6CBB670094BE2C /* LaunchScreen.storyboard */,
@@ -226,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E019B1861E6CBB670094BE2C /* Meme_Generator.xcdatamodeld in Sources */,
-				E019B1A51E6CCB720094BE2C /* GenerateViewController.swift in Sources */,
+				E019B1A51E6CCB720094BE2C /* CreateViewController.swift in Sources */,
 				E019B1801E6CBB670094BE2C /* LibraryTableViewController.swift in Sources */,
 				E0211C451E6F5BC000789DF1 /* GridCustomCell.swift in Sources */,
 				E019B1A31E6CC88F0094BE2C /* Memes.swift in Sources */,
