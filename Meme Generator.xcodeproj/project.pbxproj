@@ -20,7 +20,7 @@
 		E019B1A71E6CCC3B0094BE2C /* LibraryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */; };
 		E019B1A91E6CD1360094BE2C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019B1A81E6CD1360094BE2C /* Config.swift */; };
 		E0211C451E6F5BC000789DF1 /* GridCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0211C441E6F5BC000789DF1 /* GridCustomCell.swift */; };
-		E0211C471E6F818500789DF1 /* CustomLibraryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0211C461E6F818500789DF1 /* CustomLibraryTableCell.swift */; };
+		E0211C471E6F818500789DF1 /* TableCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0211C461E6F818500789DF1 /* TableCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryGridViewController.swift; sourceTree = "<group>"; };
 		E019B1A81E6CD1360094BE2C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		E0211C441E6F5BC000789DF1 /* GridCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCustomCell.swift; sourceTree = "<group>"; };
-		E0211C461E6F818500789DF1 /* CustomLibraryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLibraryTableCell.swift; sourceTree = "<group>"; };
+		E0211C461E6F818500789DF1 /* TableCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 			children = (
 				E019B17D1E6CBB670094BE2C /* AppDelegate.swift */,
 				E019B17F1E6CBB670094BE2C /* LibraryTableViewController.swift */,
-				E0211C461E6F818500789DF1 /* CustomLibraryTableCell.swift */,
+				E0211C461E6F818500789DF1 /* TableCustomCell.swift */,
 				E019B1A61E6CCC3B0094BE2C /* LibraryGridViewController.swift */,
 				E0211C441E6F5BC000789DF1 /* GridCustomCell.swift */,
 				E019B1A41E6CCB720094BE2C /* GenerateViewController.swift */,
@@ -232,7 +232,7 @@
 				E019B1A31E6CC88F0094BE2C /* Memes.swift in Sources */,
 				E019B1A71E6CCC3B0094BE2C /* LibraryGridViewController.swift in Sources */,
 				E019B1A91E6CD1360094BE2C /* Config.swift in Sources */,
-				E0211C471E6F818500789DF1 /* CustomLibraryTableCell.swift in Sources */,
+				E0211C471E6F818500789DF1 /* TableCustomCell.swift in Sources */,
 				E019B1A11E6CBB850094BE2C /* README.md in Sources */,
 				E019B17E1E6CBB670094BE2C /* AppDelegate.swift in Sources */,
 			);

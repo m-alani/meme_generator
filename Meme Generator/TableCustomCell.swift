@@ -1,5 +1,5 @@
 //
-//  CustomLibraryTableCell.swift
+//  TableCustomCell.swift
 //  Meme Generator
 //
 //  Created by Marwan Alani on 2017-03-07.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomLibraryTableCell: UITableViewCell {
+class TableCustomCell: UITableViewCell {
 
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellTopLabel: UILabel!

@@ -36,7 +36,7 @@ extension LibraryTableViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomLibraryTableCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! TableCustomCell
 
         if memesList.count == 0 {
             cell.isUserInteractionEnabled = false
