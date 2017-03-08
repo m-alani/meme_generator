@@ -11,14 +11,14 @@ import UIKit
 // MARK: - CreateViewController base declarations & interfaces
 class CreateViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
-    
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -31,7 +31,7 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        self.imageButtonEnabler()
+        self.saveButtonEnabler()
         topText.delegate = self
         topText.defaultTextAttributes = memeTextAttributes
         topText.textAlignment = .center
@@ -49,10 +49,13 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func actionButtonPressed(_ sender: Any) {
-    }
-    
     @IBAction func saveButtonPressed(_ sender: Any) {
+        let meme = Meme(topText: self.topText.text!,
+                        bottomText: self.bottomText.text!,
+                        originalImg: self.imageView.image!,
+                        memeImg: self.generateMemedImage())
+        memesList.append(meme)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -77,7 +80,7 @@ extension CreateViewController {
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.imageButtonEnabler()
+        self.saveButtonEnabler()
         dismiss(animated: true, completion: nil)
     }
     
@@ -85,7 +88,7 @@ extension CreateViewController {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
              self.imageView.image = image
         }
-        self.imageButtonEnabler()
+        self.saveButtonEnabler()
         dismiss(animated: true, completion: nil)
     }
 }
@@ -142,13 +145,36 @@ extension CreateViewController {
 
 // MARK: - Other Helper Functions
 extension CreateViewController {
-    func imageButtonEnabler() {
+    
+    // D.R.Y: function to handle enabling/disabling the Action & Save buttons based on having an image/meme
+    func saveButtonEnabler() {
         if self.imageView.image == nil {
             self.saveButton.isEnabled = false
-            self.actionButton.isEnabled = false
         } else {
             self.saveButton.isEnabled = true
-            self.actionButton.isEnabled = true
         }
+    }
+    
+    // Helper function to generate a meme from the current view
+    func generateMemedImage() -> UIImage {
+        // Hide & adjust the current subviews
+        self.navigationBar.isHidden = true
+        self.toolBar.isHidden = true
+        bottomText.frame.origin.y += 20
+        topText.frame.origin.y -= 20
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        // Show & reposition the subvies
+        self.navigationBar.isHidden = false
+        self.toolBar.isHidden = false
+        self.bottomText.frame.origin.y -= 20
+        self.topText.frame.origin.y += 20
+        
+        return memedImage
     }
 }

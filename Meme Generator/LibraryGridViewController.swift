@@ -8,24 +8,23 @@
 
 import UIKit
 
-class LibraryGridViewController: UIViewController{
+// MARK: - LibraryGridViewCotroller base declarations & interfaces
+class LibraryGridViewController: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var myCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    override func viewDidLayoutSubviews() {
-//        self.view.center.x += 500
+        memesViews.collection = self.myCollectionView
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-//        UIView.animate(withDuration: 0.25, animations: {
-//            self.view.center.x -= 500
-//        })
-//        print("shifted back")
+    override func viewWillAppear(_ animated: Bool) {
+        memesViews.collection?.reloadData()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        memesViews.collection?.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,7 +43,7 @@ class LibraryGridViewController: UIViewController{
 }
 
 // MARK: - UICollectionViewDataSource Methods
-extension LibraryGridViewController : UICollectionViewDataSource{
+extension LibraryGridViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memesList.count == 0 ? 1 : memesList.count
     }
@@ -52,6 +51,7 @@ extension LibraryGridViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GridCustomCell
         if memesList.count > 0  {
+            cell.isUserInteractionEnabled = true
             cell.memeImage.image = memesList[indexPath.row].memeImg
         }
         return cell
@@ -59,7 +59,7 @@ extension LibraryGridViewController : UICollectionViewDataSource{
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout Methods
-extension LibraryGridViewController : UICollectionViewDelegateFlowLayout {
+extension LibraryGridViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace = COLLECTION_INSETS.left * (COLLECTION_CELLS_PER_ROW + 1)

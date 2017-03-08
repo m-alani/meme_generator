@@ -26,6 +26,13 @@ struct Meme {
     var memeImg = UIImage()
 }
 
+/// Memes Views Struct to hold a global reference to the 2 views used to display the memes library
+struct MemesViews {
+    var collection: UICollectionView?
+    var table: UITableView?
+}
 
-/// The runtime container of memes
+/// The runtime container of memes & views
 var memesList = [Meme]()
+var memesViews = MemesViews()
+
