@@ -9,5 +9,4 @@
 import Foundation
 import UIKit
 
-let TITLE_BACKGROUND_COLOR = UIColor.green
-let TITLE_FONT_COLOR = UIColor.lightGray
+let TABLE_CELL_IMAGE_WIDTH: CGFloat = 100
