@@ -146,19 +146,49 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-tF-Maw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Black_hole" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-tF-Maw">
                                                     <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
+                                                    <color key="backgroundColor" red="0.00097750688850000008" green="0.94779557169999995" blue="0.32448017220000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="99" id="fLY-LW-1Lf"/>
                                                         <constraint firstAttribute="width" constant="99" id="xLm-mZ-yDY"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GO MAKE SOME MEMES!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Cl-vU-njD">
+                                                    <rect key="frame" x="107" y="61" width="228" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="LlD-qY-mxx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT'S EMPTIER THAN A BLACK HOLE HERE!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZs-4r-evM">
+                                                    <rect key="frame" x="107" y="8" width="228" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="n4k-Cl-w4J"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="qZs-4r-evM" firstAttribute="trailing" secondItem="KBK-xH-wPX" secondAttribute="trailingMargin" id="2pj-DA-IMJ"/>
+                                                <constraint firstItem="6Cl-vU-njD" firstAttribute="leading" secondItem="tBs-tF-Maw" secondAttribute="trailing" constant="8" id="35j-AG-nvq"/>
+                                                <constraint firstItem="6Cl-vU-njD" firstAttribute="trailing" secondItem="KBK-xH-wPX" secondAttribute="trailingMargin" id="4cJ-Ev-f0o"/>
                                                 <constraint firstItem="tBs-tF-Maw" firstAttribute="leading" secondItem="KBK-xH-wPX" secondAttribute="leading" id="8bv-M1-iGp"/>
                                                 <constraint firstItem="tBs-tF-Maw" firstAttribute="top" secondItem="KBK-xH-wPX" secondAttribute="top" id="9Fv-FF-LI3"/>
+                                                <constraint firstItem="qZs-4r-evM" firstAttribute="top" secondItem="KBK-xH-wPX" secondAttribute="topMargin" id="Ouk-Uu-u3Q"/>
+                                                <constraint firstItem="qZs-4r-evM" firstAttribute="leading" secondItem="tBs-tF-Maw" secondAttribute="trailing" constant="8" id="ZMv-Ch-1K8"/>
+                                                <constraint firstItem="6Cl-vU-njD" firstAttribute="bottom" secondItem="KBK-xH-wPX" secondAttribute="bottomMargin" id="wT3-yE-alM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellBottomLabel" destination="6Cl-vU-njD" id="2Fx-Vv-UDT"/>
+                                            <outlet property="cellImage" destination="tBs-tF-Maw" id="Bx4-tf-918"/>
+                                            <outlet property="cellTopLabel" destination="qZs-4r-evM" id="kh7-Vy-V0D"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -210,6 +240,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Black_hole" width="640" height="640"/>
         <image name="GridIcon" width="30" height="30"/>
         <image name="ListIcon" width="30" height="30"/>
     </resources>
