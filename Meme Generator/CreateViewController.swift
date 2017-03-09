@@ -15,6 +15,7 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -68,7 +69,7 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
                                 originalImg: image,
                                 memeImg: self.generateMemedImage())
             memesList.append(meme)
-            self.unloadView()
+            self.actionButton.isEnabled = true
         } else {
             let alertView = UIAlertController(title: "Ops!", message: "Something went wrong while saving your brand spanking new Meme!\nSorry, but can you please try again?", preferredStyle: UIAlertControllerStyle.alert)
             let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
@@ -76,7 +77,6 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
             }
             alertView.addAction(alertAction)
             self.present(alertView, animated: true)
-
         }
     
     }
@@ -84,6 +84,22 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.unloadView()
     }
+    
+    @IBAction func actionButtonPressed(_ sender: Any) {
+        if let index = currentMemeIndex {
+            let currentMeme = memesList[index].memeImg
+            let activityView = UIActivityViewController(activityItems: [currentMeme], applicationActivities: nil)
+            self.present(activityView, animated: true, completion: nil)
+        } else {
+            let alertView = UIAlertController(title: "Ops!", message: "Your glorious meme broke the sharing system!\nThat's just a fancy way of saying 'Something went wront'\nTry to share again.", preferredStyle: UIAlertControllerStyle.alert)
+            let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
+                self.unloadView()
+            }
+            alertView.addAction(alertAction)
+            self.present(alertView, animated: true)
+        }
+    }
+    
 }
 
 // MARK: - UIImagePickerControllerDelegate Functions
@@ -208,6 +224,7 @@ extension CreateViewController {
             self.topText.text = memesList[memeIndex].topText
             self.bottomText.text = memesList[memeIndex].bottomText
             self.saveButtonEnabler()
+            self.actionButton.isEnabled = true
         } else {
             let alertView = UIAlertController(title: "Ops!", message: "Something went wrong while loading the Meme for editing.\nPlease try again.", preferredStyle: UIAlertControllerStyle.alert)
             let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
@@ -221,6 +238,7 @@ extension CreateViewController {
     // Set the view up for creating a new meme
     func prepareForCreating() {
         self.saveButtonEnabler()
+        self.actionButton.isEnabled = false
     }
     
     // Prepare everything and dismiss the Create view
