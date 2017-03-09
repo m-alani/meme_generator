@@ -15,15 +15,27 @@ class LibraryGridViewController: UIViewController ,UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        memesViews.collection = self.myCollectionView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        memesViews.collection?.reloadData()
+        self.myCollectionView.reloadData()
+        self.myCollectionView.alpha = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.myCollectionView.alpha = 1
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.15, animations: {
+            self.myCollectionView.alpha = 0
+        })
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        memesViews.collection?.reloadData()
+        self.myCollectionView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

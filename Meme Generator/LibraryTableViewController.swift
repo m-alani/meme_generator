@@ -13,14 +13,8 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
-    var startupAnimation = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        memesViews.table = self.tableView
-        if self.startupAnimation {
-            self.tableView.alpha = 0
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,20 +23,24 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        memesViews.table?.reloadData()
+        tableView.reloadData()
+        self.tableView.alpha = 0
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        memesViews.table?.reloadData()
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if startupAnimation {
-            startupAnimation = false
-            UIView.animate(withDuration: 0.5, animations: {
-                self.tableView.alpha = 1
-            })
-        }
+        UIView.animate(withDuration: 0.25, animations: {
+            self.tableView.alpha = 1
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.15, animations: {
+            self.tableView.alpha = 0
+        })
     }
 }
 

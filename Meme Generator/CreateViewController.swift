@@ -57,12 +57,28 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        let meme = Meme(topText: self.topText.text!,
-                        bottomText: self.bottomText.text!,
-                        originalImg: self.imageView.image!,
-                        memeImg: self.generateMemedImage())
-        memesList.append(meme)
-        self.unloadView()
+        if let index = currentMemeIndex {
+            memesList.remove(at: index)
+        }
+        if let top = self.topText.text,
+            let bottom = self.bottomText.text,
+            let image = self.imageView.image {
+                let meme = Meme(topText: top,
+                                bottomText: bottom,
+                                originalImg: image,
+                                memeImg: self.generateMemedImage())
+            memesList.append(meme)
+            self.unloadView()
+        } else {
+            let alertView = UIAlertController(title: "Ops!", message: "Something went wrong while saving your brand spanking new Meme!\nSorry, but can you please try again?", preferredStyle: UIAlertControllerStyle.alert)
+            let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
+                self.unloadView()
+            }
+            alertView.addAction(alertAction)
+            self.present(alertView, animated: true)
+
+        }
+    
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -204,7 +220,7 @@ extension CreateViewController {
     
     // Set the view up for creating a new meme
     func prepareForCreating() {
-        
+        self.saveButtonEnabler()
     }
     
     // Prepare everything and dismiss the Create view
