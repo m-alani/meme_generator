@@ -36,3 +36,5 @@ struct MemesViews {
 var memesList = [Meme]()
 var memesViews = MemesViews()
 
+// Global variable for editable meme
+var currentMemeIndex: Int?

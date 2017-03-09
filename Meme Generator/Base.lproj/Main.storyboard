@@ -151,7 +151,7 @@
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Meme Workbench" id="eE5-oS-HMd">
+                                    <navigationItem id="eE5-oS-HMd">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aiF-OR-04V">
                                             <connections>
                                                 <action selector="cancelButtonPressed:" destination="N5q-yh-W8G" id="kV4-7s-jHM"/>
@@ -279,7 +279,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yyd-yj-Gpa" id="KBK-xH-wPX">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Black_hole" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-tF-Maw">

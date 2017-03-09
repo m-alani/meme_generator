@@ -31,13 +31,20 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        self.saveButtonEnabler()
         topText.delegate = self
         topText.defaultTextAttributes = memeTextAttributes
         topText.textAlignment = .center
         bottomText.delegate = self
         bottomText.defaultTextAttributes = memeTextAttributes
         bottomText.textAlignment = .center
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if currentMemeIndex != nil {
+            self.prepareForEditing()
+        } else {
+            self.prepareForCreating()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,11 +62,11 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
                         originalImg: self.imageView.image!,
                         memeImg: self.generateMemedImage())
         memesList.append(meme)
-        dismiss(animated: true, completion: nil)
+        self.unloadView()
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.unloadView()
     }
 }
 
@@ -169,12 +176,40 @@ extension CreateViewController {
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // Show & reposition the subvies
+        // Show & reposition the subviews
         self.navigationBar.isHidden = false
         self.toolBar.isHidden = false
         self.bottomText.frame.origin.y -= 20
         self.topText.frame.origin.y += 20
         
         return memedImage
+    }
+    
+    // Set the view up for editing a meme
+    func prepareForEditing() {
+        if let memeIndex = currentMemeIndex {
+            self.imageView.image = memesList[memeIndex].memeImg
+            self.topText.text = memesList[memeIndex].topText
+            self.bottomText.text = memesList[memeIndex].bottomText
+            self.saveButtonEnabler()
+        } else {
+            let alertView = UIAlertController(title: "Ops!", message: "Something went wrong while loading the Meme for editing.\nPlease try again.", preferredStyle: UIAlertControllerStyle.alert)
+            let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
+               self.unloadView()
+            }
+            alertView.addAction(alertAction)
+            self.present(alertView, animated: true)
+        }
+    }
+    
+    // Set the view up for creating a new meme
+    func prepareForCreating() {
+        
+    }
+    
+    // Prepare everything and dismiss the Create view
+    func unloadView() {
+        currentMemeIndex = nil
+        self.dismiss(animated: true, completion: nil)
     }
 }
