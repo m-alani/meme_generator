@@ -69,6 +69,9 @@ extension LibraryGridViewController {
         if memesList.count > 0  {
             cell.isUserInteractionEnabled = true
             cell.memeImage.image = memesList[indexPath.row].memeImg
+        } else {
+            cell.isUserInteractionEnabled = false
+            cell.memeImage.image = #imageLiteral(resourceName: "Black_hole_meme")
         }
         return cell
     }

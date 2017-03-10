@@ -59,8 +59,12 @@ extension LibraryTableViewController {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-                memesList.remove(at: indexPath.row)
-                tableView.reloadData()
+            memesList.remove(at: indexPath.row)
+            tableView.alpha = 0
+            tableView.reloadData()
+            UIView.animate(withDuration: 0.25, animations: {
+                tableView.alpha = 1
+            })
         }
     }
 }
@@ -78,6 +82,11 @@ extension LibraryTableViewController {
             cell.cellTopLabel.text = memesList[indexPath.row].topText
             cell.cellBottomLabel.text = memesList[indexPath.row].bottomText
             cell.cellImage.image = memesList[indexPath.row].originalImg
+        } else {
+            cell.isUserInteractionEnabled = false
+            cell.cellTopLabel.text = "IT'S EMPTIER THAN A BLACK HOLE OVER HERE"
+            cell.cellBottomLabel.text = "GO MAKE SOME MEMES!"
+            cell.cellImage.image = #imageLiteral(resourceName: "Black_hole")
         }
         return cell
     }
