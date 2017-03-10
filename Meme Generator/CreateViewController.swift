@@ -70,6 +70,7 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
                                 memeImg: self.generateMemedImage())
             memesList.append(meme)
             self.actionButton.isEnabled = true
+            currentMemeIndex = memesList.count - 1
         } else {
             let alertView = UIAlertController(title: "Ops!", message: "Something went wrong while saving your brand spanking new Meme!\nSorry, but can you please try again?", preferredStyle: UIAlertControllerStyle.alert)
             let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
@@ -91,7 +92,7 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
             let activityView = UIActivityViewController(activityItems: [currentMeme], applicationActivities: nil)
             self.present(activityView, animated: true, completion: nil)
         } else {
-            let alertView = UIAlertController(title: "Ops!", message: "Your glorious meme broke the sharing system!\nThat's just a fancy way of saying 'Something went wront'\nTry to share again.", preferredStyle: UIAlertControllerStyle.alert)
+            let alertView = UIAlertController(title: "Ops!", message: "Your glorious meme broke the sharing system!\nThat's just a fancy way of saying 'Something went wrong'\nTry to share again.", preferredStyle: UIAlertControllerStyle.alert)
             let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
                 self.unloadView()
             }
@@ -220,7 +221,7 @@ extension CreateViewController {
     // Set the view up for editing a meme
     func prepareForEditing() {
         if let memeIndex = currentMemeIndex {
-            self.imageView.image = memesList[memeIndex].memeImg
+            self.imageView.image = memesList[memeIndex].originalImg
             self.topText.text = memesList[memeIndex].topText
             self.bottomText.text = memesList[memeIndex].bottomText
             self.saveButtonEnabler()

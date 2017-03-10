@@ -73,6 +73,12 @@ extension LibraryGridViewController {
 // MARK: - UICollectionViewDelegateFlowLayout Methods
 extension LibraryGridViewController {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.cellForItem(at: indexPath)?.isSelected = false
+        currentMemeIndex = indexPath.row
+        performSegue(withIdentifier: "gridToCreate", sender: self)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace = COLLECTION_INSETS.left * (COLLECTION_CELLS_PER_ROW + 1)
         let availableWidth = view.frame.width - paddingSpace - 40

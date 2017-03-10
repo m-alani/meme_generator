@@ -47,7 +47,9 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
 // MARK: - UITableViewDelegate Methods
 extension LibraryTableViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: - handle selecting a row (meme) action
+        tableView.cellForRow(at: indexPath)?.isSelected = false
+        currentMemeIndex = indexPath.row
+        performSegue(withIdentifier: "tableToCreate", sender: self)
     }
 }
 

@@ -39,7 +39,7 @@
                                     <navigationItem title="View Memes" id="A4I-Hk-UHq">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="atB-q7-Uyr">
                                             <connections>
-                                                <segue destination="N5q-yh-W8G" kind="show" id="biU-OX-9Iy"/>
+                                                <segue destination="N5q-yh-W8G" kind="show" identifier="gridToCreate" id="biU-OX-9Iy"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -152,7 +152,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem id="eE5-oS-HMd">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aiF-OR-04V">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="aiF-OR-04V">
                                             <connections>
                                                 <action selector="cancelButtonPressed:" destination="N5q-yh-W8G" id="kV4-7s-jHM"/>
                                             </connections>
@@ -270,7 +270,7 @@
                                     <navigationItem title="View Memes" id="62t-y3-QsA">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3HI-qn-UxU">
                                             <connections>
-                                                <segue destination="N5q-yh-W8G" kind="show" id="Bu6-58-zdo"/>
+                                                <segue destination="N5q-yh-W8G" kind="show" identifier="tableToCreate" id="Bu6-58-zdo"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -389,6 +389,6 @@
         <image name="ListIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="biU-OX-9Iy"/>
+        <segue reference="Bu6-58-zdo"/>
     </inferredMetricsTieBreakers>
 </document>
