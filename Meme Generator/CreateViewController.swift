@@ -18,8 +18,10 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
+    
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -68,9 +70,10 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
                                 bottomText: bottom,
                                 originalImg: image,
                                 memeImg: self.generateMemedImage())
-            memesList.append(meme)
-            self.actionButton.isEnabled = true
-            currentMemeIndex = memesList.count - 1
+                memesList.append(meme)
+                self.actionButton.isEnabled = true
+                self.deleteButton.isEnabled = true
+                currentMemeIndex = memesList.count - 1
         } else {
             let alertView = UIAlertController(title: "Ops!", message: "Something went wrong while saving your brand spanking new Meme!\nSorry, but can you please try again?", preferredStyle: UIAlertControllerStyle.alert)
             let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
@@ -98,6 +101,13 @@ class CreateViewController: UIViewController, UINavigationControllerDelegate, UI
             }
             alertView.addAction(alertAction)
             self.present(alertView, animated: true)
+        }
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        if let index = currentMemeIndex {
+            memesList.remove(at: index)
+            self.unloadView()
         }
     }
     
@@ -226,6 +236,7 @@ extension CreateViewController {
             self.bottomText.text = memesList[memeIndex].bottomText
             self.saveButtonEnabler()
             self.actionButton.isEnabled = true
+            self.deleteButton.isEnabled = true
         } else {
             let alertView = UIAlertController(title: "Ops!", message: "Something went wrong while loading the Meme for editing.\nPlease try again.", preferredStyle: UIAlertControllerStyle.alert)
             let alertAction = UIAlertAction(title: "OK",style: .default) { (result: UIAlertAction) in
@@ -240,6 +251,7 @@ extension CreateViewController {
     func prepareForCreating() {
         self.saveButtonEnabler()
         self.actionButton.isEnabled = false
+        self.deleteButton.isEnabled = false
     }
     
     // Prepare everything and dismiss the Create view

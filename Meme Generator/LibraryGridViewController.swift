@@ -13,8 +13,12 @@ class LibraryGridViewController: UIViewController ,UICollectionViewDataSource, U
 
     @IBOutlet weak var myCollectionView: UICollectionView!
     
+    var localMemesList = [Meme]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        myCollectionView.dataSource =  self
+        memesViews.collection = self.myCollectionView
     }
     
     override func viewWillAppear(_ animated: Bool) {

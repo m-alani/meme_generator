@@ -15,6 +15,7 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        memesViews.table = self.tableView
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +52,17 @@ extension LibraryTableViewController {
         currentMemeIndex = indexPath.row
         performSegue(withIdentifier: "tableToCreate", sender: self)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return memesList.count != 0
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+                memesList.remove(at: indexPath.row)
+                tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource Methods
@@ -61,14 +73,12 @@ extension LibraryTableViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! TableCustomCell
-
         if memesList.count > 0 {
             cell.isUserInteractionEnabled = true
             cell.cellTopLabel.text = memesList[indexPath.row].topText
             cell.cellBottomLabel.text = memesList[indexPath.row].bottomText
             cell.cellImage.image = memesList[indexPath.row].originalImg
         }
-        
         return cell
     }
 }

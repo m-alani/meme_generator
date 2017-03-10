@@ -132,7 +132,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="N5q-yh-W8G" id="BuQ-iv-iPw"/>
                                 </connections>
@@ -177,12 +177,18 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hu6-uP-W2y"/>
+                                    <barButtonItem systemItem="trash" id="zUE-Wh-3IC">
+                                        <connections>
+                                            <action selector="deleteButtonPressed:" destination="N5q-yh-W8G" id="hKa-25-uet"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Vr3-sa-EFZ"/>
                                     <barButtonItem systemItem="action" id="Ur8-cF-A0W">
                                         <connections>
                                             <action selector="actionButtonPressed:" destination="N5q-yh-W8G" id="N5K-ex-aHR"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Vr3-sa-EFZ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MEj-XY-oU8"/>
                                     <barButtonItem systemItem="camera" id="oBj-El-Jbp">
                                         <connections>
                                             <action selector="cameraButtonPressed:" destination="N5q-yh-W8G" id="ESe-oJ-oMj"/>
@@ -197,7 +203,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="N5q-yh-W8G" id="6Fy-b2-iQA"/>
                                 </connections>
@@ -230,6 +236,7 @@
                         <outlet property="addButton" destination="BQs-Il-rWS" id="0eR-f7-kph"/>
                         <outlet property="bottomText" destination="cbl-Oc-mfM" id="CGy-Pa-JNR"/>
                         <outlet property="cameraButton" destination="oBj-El-Jbp" id="jbn-UP-Soh"/>
+                        <outlet property="deleteButton" destination="zUE-Wh-3IC" id="rjX-jd-AJ6"/>
                         <outlet property="imageView" destination="g7b-iX-3jI" id="mwJ-8S-zBj"/>
                         <outlet property="navigationBar" destination="h02-Ek-AIU" id="btc-qG-OOw"/>
                         <outlet property="saveButton" destination="nmJ-dU-du6" id="HJk-dg-MB4"/>
@@ -276,7 +283,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IHb-7G-fHl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IHb-7G-fHl">
                                 <rect key="frame" x="16" y="56" width="343" height="562"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0023068441080000002" green="0.60153585669999998" blue="0.2005392909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
