@@ -15,7 +15,6 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        memesViews.table = self.tableView
     }
 
     override func didReceiveMemoryWarning() {

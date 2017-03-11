@@ -251,7 +251,7 @@
         <!--List-->
         <scene sceneID="alH-KR-ZR5">
             <objects>
-                <viewController id="lMW-Gv-JPz" customClass="LibraryTableViewController" customModule="Meme_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listView" id="lMW-Gv-JPz" customClass="LibraryTableViewController" customModule="Meme_Generator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gsc-fd-7Co"/>
                         <viewControllerLayoutGuide type="bottom" id="5PW-SS-d1M"/>

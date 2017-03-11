@@ -10,10 +10,11 @@ iOS 10 - XCode 8 - Swift 3
 
 #### The App is created to demonstarate knowledge of:
 - UIKit
-- CoreData
 - XCode StoryBoards & Auto Layout
-- iOS Navigation Views
-- Tab Views 
+- iOS Navigation & Segues
+- Tab Controllers
+- Table Views
+- Collection Views
 - The Delegate Pattern
 - Swift Class Extensions
 - iOS Access Permissions (info.plist)
@@ -28,14 +29,15 @@ Digital assets & images are provided with the course by Udacity.
   
 #### To Do:  
 - Add more tests
-- Implement support for persistency using CoreData  
+- Improve the UI
+- Implement persistency using CoreData  
   
 -----
   
 #### Screenshots  
   
 Placeholders at the moment:  
-![Screenshots](https://raw.githubusercontent.com/m-alani/pitch-perfect/master/screenshot.jpg "Screenshots")  
+![Screenshots](https://raw.githubusercontent.com/m-alani/meme_generator/master/screenshot.jpg "Screenshots")  
 
 -----  
 

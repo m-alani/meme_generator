@@ -17,8 +17,7 @@ class LibraryGridViewController: UIViewController ,UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myCollectionView.dataSource =  self
-        memesViews.collection = self.myCollectionView
+        //myCollectionView.dataSource =  self
     }
     
     override func viewWillAppear(_ animated: Bool) {
