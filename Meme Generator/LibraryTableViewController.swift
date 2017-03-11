@@ -28,10 +28,6 @@ class LibraryTableViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.alpha = 0
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        tableView.reloadData()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         UIView.animate(withDuration: 0.25, animations: {
             self.tableView.alpha = 1
