@@ -38,9 +38,13 @@ class LibraryGridViewController: UIViewController ,UICollectionViewDataSource, U
         })
     }
     
+    // TODO: - Look up why this gets called when rotating the screen on the TableView tab (This view is not even displayed)
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        self.myCollectionView.reloadData()
+        if myCollectionView != nil {
+            self.myCollectionView.reloadData()
+        }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

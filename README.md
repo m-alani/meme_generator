@@ -25,7 +25,13 @@ You can find the course through [this link](https://www.udacity.com/course/uikit
 Digital assets & images are provided with the course by Udacity.  
 
 -----  
-
+  
+#### To Do:  
+- Add more tests
+- Implement support for persistency using CoreData  
+  
+-----
+  
 #### Screenshots  
   
 Placeholders at the moment:  
