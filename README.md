@@ -35,8 +35,7 @@ Digital assets & images are provided with the course by Udacity.
 -----
   
 #### Screenshots  
-  
-Placeholders at the moment:  
+    
 ![Screenshots](https://raw.githubusercontent.com/m-alani/meme_generator/master/screenshot.jpg "Screenshots")  
 
 -----  
