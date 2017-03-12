@@ -23,11 +23,10 @@ iOS 10 - XCode 8 - Swift 3
 
 The app was inspired by the completion of Udacity's "UIKit Fundamentals" course.  
 You can find the course through [this link](https://www.udacity.com/course/uikit-fundamentals--ud788)  
-Digital assets & images are provided with the course by Udacity.  
-
+  
 -----  
   
-#### To Do:  
+#### Room for future improvements:  
 - Add more tests
 - Improve the UI
 - Implement persistency using CoreData  
